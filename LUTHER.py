@@ -45,7 +45,6 @@ data = scanner_data.Data([0,0], languages.copy())
 while(line < len(token_stream)):
 
     while(line < len(token_stream) and token_stream[line] != -1 and char_num < len(token_stream[line])):
-        print(output)
         line, char_num, data, empty = check_char(data, line, char_num, token_stream[line][char_num] , char_num == len(token_stream[line])-1, output, languages)
         if(not empty):
             char_num += 1
