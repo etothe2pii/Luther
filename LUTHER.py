@@ -60,7 +60,6 @@ while(line < len(token_stream)):
         line += 1
     #new_line = True
 
-print(output)
 
 output_file = open(output_string, "w")
 
