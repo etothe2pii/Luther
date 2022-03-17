@@ -32,7 +32,7 @@ class Data:
             if(not match or fail):
                 self.token_set.pop(i)
                 i -= 1
-            if(accept and match and not changed):
+            elif(accept and match and not changed):
                 self.best_match = self.token_set[i]
                 self.best_matched_string = current
                 self.best_loc = self.end_loc.copy()
