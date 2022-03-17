@@ -11,7 +11,7 @@ import scanner_data
 
 def check_char(data, line, char_num, character, new_line, output, languages, fail = False):
     empty, match, matched_string, match_start, match_end = data.check_next(language.convert_to_ascii(character), new_line, line, char_num, fail)
-    if (empty and match != None):
+    if (empty):
         if (match.value != None):
             matched_string = match.value
 

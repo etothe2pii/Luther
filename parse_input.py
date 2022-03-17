@@ -28,8 +28,10 @@ def get_input(input_file):
             tmp_dfa = []
             for i in lines:
                 tmp_dfa.append(i.split())
-
-            languages_output.append(language.Language(tmp_dfa,valid_char, args[1]))
+            if(len(args) == 3):
+                languages_output.append(language.Language(tmp_dfa, valid_char, args[1], args[2]))
+            else:
+                languages_output.append(language.Language(tmp_dfa,valid_char, args[1]))
     return languages_output
 
 

@@ -6,10 +6,11 @@ class Language:
     state = 0
     current_sequence = ""
     valid_char = []
-    def __init__(self, dfa, valid_char, token_id):
+    def __init__(self, dfa, valid_char, token_id, value = None):
         self.dfa = dfa
         self.token_id = token_id
         self.valid_char = valid_char
+        self.value = value
 
 
     #Returns bool: did it match bool: is it accepting string: current sequence
