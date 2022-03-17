@@ -14,15 +14,14 @@ class Language:
 
     #Returns bool: did it match bool: is it accepting string: current sequence
     def match_char(self, character):
-        if(character in self.valid_char and self.dfa[int(self.state)][self.valid_char.index(character) + 2] == "E"):
+        if(self.dfa[int(self.state)][self.valid_char.index(character) + 2] == "E"):
             tmp_sequence = self.current_sequence
             self.current_sequence = ""
             self.state = 0
             return False, False, tmp_sequence
         else:
             self.current_sequence += convert_to_ascii(character)
-            if(character in self.valid_char):
-                self.state = self.dfa[int(self.state)][self.valid_char.index(character) + 2]
+            self.state = self.dfa[int(self.state)][self.valid_char.index(character) + 2]
             return (character in self.valid_char), (self.dfa[int(self.state)][0] == "+"), self.current_sequence
 
     def __repr__(self):
